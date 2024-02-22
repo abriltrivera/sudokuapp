@@ -1,14 +1,14 @@
 :root {
-    --bg-main: #f0f2f5;
+    --bg-main: #ccccd0;
     --bg-body: #fff;
     --color-txt: #000;
-    --filled-color: #000;
-    --filled-bg: #caf0f8;
+    --filled-color: #181717;
+    --filled-bg: #a10000cc;
 
     --white: #fff;
-    --blue: #00aeef;
-    --red: #e91e63;
-    --black: #000;
+    --blue: #a10000ea;
+    --red: #a10000ea;
+    --black: #181717;
 
     --nav-size: 70px;
     --sudoku-cell-size: 50px;
@@ -26,10 +26,10 @@
 
 .dark {
     --bg-main: #2a2a38;
-    --bg-body: #1a1a2e;
-    --color-txt: #6a6a6a;
-    --filled-color: #4f4f63;
-    --filled-bg: #000;
+    --bg-body: #21212e;
+    --color-txt: #726c6c;
+    --filled-color: #adadb1;
+    --filled-bg: #171717;
 }
 
 * {
