@@ -1,25 +1,26 @@
 :root {
-    --bg-main: #ccccd0;
-    --bg-body: #fff;
-    --color-txt: #000;
-    --filled-color: #181717;
-    --filled-bg: #a10000cc;
+    --bg-main: #f2f2f2;
+    --bg-body: #ffffff;
+    --color-txt: #333333;
+    --filled-color: #ffffff;
+    --filled-bg: #FF5733;
 
-    --white: #fff;
-    --blue: #a10000ea;
-    --red: #a10000ea;
-    --black: #181717;
+    --white: #ffffff;
+    --blue: #3c40c6;
+    --red: #e74c3c;
+    --black: #333333;
 
     --nav-size: 70px;
-    --sudoku-cell-size: 50px;
+    --sudoku-cell-size: 60px;
 
-    --border-radius: 10px;
+    --border-radius: 8px;
 
     --space-y: 20px;
 
-    --gap: 5px;
+    --gap: 10px;
 
-    --font-size: 1.5rem;
+    --font-family: 'Roboto', sans-serif;
+    --font-size: 1.6rem;
     --font-size-lg: 2rem;
     --font-size-xl: 3rem;
 }
@@ -27,9 +28,154 @@
 .dark {
     --bg-main: #2a2a38;
     --bg-body: #21212e;
-    --color-txt: #726c6c;
-    --filled-color: #adadb1;
-    --filled-bg: #171717;
+    --color-txt: #ffffff;
+    --filled-color: #21212e;
+    --filled-bg: #FF5733;
+}
+
+
+.login-container {
+    background-color: var(--bg-body); 
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--blue); 
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--blue); 
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--bg-main);
+    border-radius: var(--border-radius);
+    color: var(--color-txt);
+    transition: border-color 0.3s; 
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="password"]:hover,
+input[type="password"]:focus {
+    border-color: var(--blue); 
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+.separator {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-link {
+    text-align: center;
+}
+
+.register-link a {
+    color: #007bff; 
+}
+
+.register-container {
+    background-color: var(--bg-body); 
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: auto; 
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--blue); 
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--blue); 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--bg-main);
+    border-radius: var(--border-radius);
+    color: var(--color-txt);
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="email"]:hover,
+input[type="email"]:focus,
+input[type="password"]:hover,
+input[type="password"]:focus {
+    border-color: var(--blue); 
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+.login-link {
+    text-align: center;
+}
+
+.login-link a {
+    color: #007bff; 
 }
 
 * {
@@ -40,15 +186,14 @@
 }
 
 body {
-    font-family: "Potta One", cursive;
-    /* height: 100vh; */
+    font-family: var(--font-family);
     background-color: var(--bg-body);
     overflow-x: hidden;
     user-select: none;
 }
 
 input {
-    font-family: "Potta One", cursive;
+    font-family: var(--font-family);
     border: 2px solid var(--bg-main);
     color: var(--color-txt);
 }
@@ -115,7 +260,6 @@ nav {
 }
 
 .main {
-    /* height: 100vh; */
     padding-top: var(--nav-size);
     display: grid;
     place-items: center;
@@ -151,12 +295,12 @@ nav {
 }
 
 .input-name {
-    height: 80px;
-    width: 280px;
+    height: 80px; /* Mismo que el botón */
+    width: 280px; /* Mismo que el botón */
     border-radius: var(--border-radius);
     outline: 0;
     background-color: var(--bg-main);
-    padding: 20px;
+    padding: 10px;
     font-size: var(--font-size-lg);
     text-align: center;
 }
@@ -174,6 +318,7 @@ nav {
     font-size: var(--font-size-lg);
     cursor: pointer;
 }
+
 
 .btn-blue {
     background-color: var(--blue);
@@ -412,22 +557,22 @@ nav {
     :root {
         --nav-size: 50px;
 
-        --sudoku-cell-size: 30px;
+        --sudoku-cell-size: 40px;
 
         --border-radius: 5px;
 
         --space-y: 10px;
 
-        --gap: 2px;
+        --gap: 5px;
 
-        --font-size: 1rem;
-        --font-size-lg: 1.5rem;
-        --font-size-xl: 2rem;
+        --font-size: 1.4rem;
+        --font-size-lg: 1.8rem;
+        --font-size-xl: 2.5rem;
     }
 
     .input-name,
     .btn {
-        height: 50px;
+        height: 60px;
     }
 
     .main-grid-cell.hover {
@@ -436,9 +581,5 @@ nav {
 
     .screen {
         min-width: unset;
-    }
-
-    .main {
-        height: 100vh;
     }
 }

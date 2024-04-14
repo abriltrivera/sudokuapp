@@ -1,3 +1,31 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Coloca aquí el código para el cambio de tema
+    const toggleSwitch = document.querySelector('.dark-mode-toggle input[type="checkbox"]');
+    console.log(toggleSwitch); // Agregar este console.log
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+        }
+    }
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+});
+
+
 const newGrid = (size) => {
     let arr = new Array(size);
 
