@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <form id="register-form" action="registro.php" method="post">
     <title>Register</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="/sudokuapp/www/js/jquery/dist/jquery.min.js"></script>
+    <script src="/sudokuapp/www/js/index.js"></script>
+    <script src="/sudokuapp/www/js/routes.js"></script>
+    <script src="/sudokuapp/www/js/usersController.js"></script>
 </head>
 <body>
     <div class="register-container">
@@ -23,11 +26,30 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit">Register</button>
+            <button id="register-submit" type="submit">Register</button>
         </form>
         <div class="login-link">
             Already have an account? <a href="login.html">Login here</a>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('register-submit').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            var userName = $('#name').val();
+            var userEmail = $('#email').val();
+            var userPassword = $('#password').val();
+
+            var registerData = {
+                name: userName,
+                email: userEmail,
+                password: userPassword
+            }
+
+            register(registerData);
+        });
+    });
+    </script>
 </body>
 </html>

@@ -5,25 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="/sudokuapp/www/js/jquery/dist/jquery.min.js"></script>
+    <script src="/sudokuapp/www/js/index.js"></script>
+    <script src="/sudokuapp/www/js/routes.js"></script>
+    <script src="/sudokuapp/www/js/usersController.js"></script>
 </head>
 <body>
     <div class="login-container">
         <h2>SUDOKU</h2>
         <form id="login-form">
             <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit">Login</button>
+            <button id="login-submit" type="submit">Login</button>
         </form>
         </div>
         <div class="register-link">
             Don't have an account? <a href="register.html">Register here</a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            document.getElementById('login-submit').addEventListener('click', function(event) {
+                event.preventDefault();
+
+                var userEmail = $('#email').val();
+                var userPassword = $('#password').val();
+
+                var formData = {
+                    email: userEmail,
+                    password: userPassword
+                }
+
+                login(formData);
+            });
+        });
+
+    </script>
 </body>
 </html>
